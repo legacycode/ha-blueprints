@@ -114,6 +114,13 @@ trigger:
 action:
   - choose:
       - conditions:
+          - condition: template
+            value_template: "{{ not cube_action }}"
+        sequence:
+          - service: persistent_notification.create
+            data:
+              message: "Please provide Magic Cube MQTT topic!"
+      - conditions:
           - condition: trigger
             id: shake
         sequence:
