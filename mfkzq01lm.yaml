@@ -1,63 +1,73 @@
 blueprint:
   name: Zigbee2Mqtt Aqara Magic Cube Control
-  description: 'Steuerung von Home Assistant-Automatisierungen mit Zigbee2mqtt und dem Aqara Magic Cube. Mögliche Aktionen: shake, throw, wakeup, fall, tap, slide, flip180, flip90, rotate_left und rotate_right.'
+  description: 'Control Home Assistant automations using Zigbee2mqtt and the Aqara Magic Cube. The possible actions include shake, throw, wakeup, fall, tap, slide, flip180, flip90, rotate_left, and rotate_right.'
   domain: automation
   input:
     cube_action:
       name: Magic Cube MQTT topic
-      description: 'Geben Sie das MQTT-Thema für den Magic Cube ein (z. B. zigbee2mqtt/Magic Cube/action).'
+      description: 'Enter the MQTT topic for the Magic Cube (e.g., zigbee2mqtt/Magic Cube/action).'
       selector:
         text:
     action_shake:
-      name: shake
-      description: 'Aktion, die ausgeführt wird, wenn der Würfel geschüttelt wird.'
+      name: Shake (optional)
+      description: 'Action to be executed when the cube is shaken.'
       selector:
         action:
+      default: []
     action_throw:
-      name: throw
-      description: 'Aktion, die ausgeführt wird, wenn der Würfel geworfen wird.'
+      name: Throw (optional)
+      description: 'Action to be executed when the cube is thrown.'
       selector:
         action:
+      default: []
     action_wakeup:
-      name: wakeup
-      description: 'Aktion, die ausgeführt wird, wenn der Würfel aufgeweckt wird.'
+      name: Wakeup (optional)
+      description: 'Action to be executed when the cube is woken up.'
       selector:
         action:
+      default: []
     action_fall:
-      name: fall
-      description: 'Aktion, die ausgeführt wird, wenn der Würfel fällt.'
+      name: Fall (optional)
+      description: 'Action to be executed when the cube falls.'
       selector:
         action:
+      default: []
     action_tap:
-      name: tap
-      description: 'Aktion, die ausgeführt wird, wenn auf den Würfel getippt wird.'
+      name: Tap (optional)
+      description: 'Action to be executed when tapping on the cube.'
       selector:
         action:
+      default: []
     action_slide:
-      name: slide
-      description: 'Aktion, die ausgeführt wird, wenn der Würfel geschoben wird.'
+      name: Slide (optional)
+      description: 'Action to be executed when sliding the cube.'
       selector:
         action:
+      default: []
     action_flip180:
-      name: flip180
-      description: 'Aktion, die ausgeführt wird, wenn der Würfel um 180 Grad gedreht wird.'
+      name: Flip180 (optional)
+      description: 'Action to be executed when the cube is flipped 180 degrees.'
       selector:
         action:
+      default: []
     action_flip90:
-      name: flip90
-      description: 'Aktion, die ausgeführt wird, wenn der Würfel um 90 Grad gedreht wird.'
+      name: Flip90 (optional)
+      description: 'Action to be executed when the cube is flipped 90 degrees.'
       selector:
         action:
+      default: []
     action_rotate_left:
-      name: rotateLeft
-      description: 'Aktion, die ausgeführt wird, wenn der Würfel gegen den Uhrzeigersinn gedreht wird.'
+      name: RotateLeft (optional)
+      description: 'Action to be executed when the cube is rotated counterclockwise.'
       selector:
         action:
+      default: []
     action_rotate_right:
-      name: rotateRight
-      description: 'Aktion, die ausgeführt wird, wenn der Würfel im Uhrzeigersinn gedreht wird.'
+      name: RotateRight (optional)
+      description: 'Action to be executed when the cube is rotated clockwise.'
       selector:
         action:
+      default: []
 
 trigger:
   - platform: mqtt
