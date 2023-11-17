@@ -1,61 +1,61 @@
 blueprint:
-  name: Zigbee2Mqtt Aqara Magic Cube control (MFKZQ01LM)
-  description: ''
+  name: Zigbee2Mqtt Aqara Magic Cube Control
+  description: 'Control Home Assistant automations using Zigbee2mqtt and the Aqara Magic Cube. The possible actions include shake, throw, wakeup, fall, tap, slide, flip180, flip90, rotate_left, and rotate_right.'
   domain: automation
   input:
     cube_action:
       name: Magic Cube MQTT topic
-      description: 'Enter the MQTT topic for the Magic Cube (e.g., zigbee2mqtt/Magic Cube/action)'
+      description: 'Enter the MQTT topic for the Magic Cube (e.g., zigbee2mqtt/Magic Cube/action).'
       selector:
         text:
     action_shake:
       name: Shake
-      description: Action to be executed when the cube is shaken.
+      description: 'Action to be executed when the cube is shaken.'
       selector:
         action:
     action_throw:
       name: Throw
-      description: Action to be executed when the cube is thrown.
+      description: 'Action to be executed when the cube is thrown.'
       selector:
         action:
     action_wakeup:
       name: Wakeup
-      description: Action to be executed when the cube is woken up.
+      description: 'Action to be executed when the cube is woken up.'
       selector:
         action:
     action_fall:
       name: Fall
-      description: Action to be executed when the cube falls.
+      description: 'Action to be executed when the cube falls.'
       selector:
         action:
     action_tap:
       name: Tap
-      description: Action to be executed when tapping on the cube.
+      description: 'Action to be executed when tapping on the cube.'
       selector:
         action:
     action_slide:
       name: Slide
-      description: Action to be executed when sliding the cube.
+      description: 'Action to be executed when sliding the cube.'
       selector:
         action:
     action_flip180:
       name: Flip180
-      description: Action to be executed when the cube is flipped 180 degrees.
+      description: 'Action to be executed when the cube is flipped 180 degrees.'
       selector:
         action:
     action_flip90:
       name: Flip90
-      description: Action to be executed when the cube is flipped 90 degrees.
+      description: 'Action to be executed when the cube is flipped 90 degrees.'
       selector:
         action:
     action_rotate_left:
       name: RotateLeft
-      description: Action to be executed when the cube is rotated counterclockwise.
+      description: 'Action to be executed when the cube is rotated counterclockwise.'
       selector:
         action:
     action_rotate_right:
       name: RotateRight
-      description: Action to be executed when the cube is rotated clockwise.
+      description: 'Action to be executed when the cube is rotated clockwise.'
       selector:
         action:
 
