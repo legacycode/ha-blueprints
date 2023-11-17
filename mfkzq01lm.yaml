@@ -3,11 +3,12 @@ blueprint:
   description: 'Control Home Assistant automations using Zigbee2mqtt and the Aqara Magic Cube. The possible actions include shake, throw, wakeup, fall, tap, slide, flip180, flip90, rotate_left, and rotate_right.'
   domain: automation
   input:
-    cube_action:
-      name: Magic Cube MQTT topic
-      description: 'Enter the MQTT topic for the Magic Cube (e.g., zigbee2mqtt/Magic Cube/action).'
+    cube_entity:
+      name: Magic Cube Entity
+      description: 'Select the Aqara Magic Cube entity.'
       selector:
-        text:
+        entity:
+          domain: sensor
     action_shake:
       name: Shake
       description: 'Action to be executed when the cube is shaken.'
@@ -60,98 +61,35 @@ blueprint:
         action:
 
 trigger:
+  - platform: state
+    entity_id: !input cube_entity
   - platform: mqtt
-    topic: !input cube_action
+    topic: '{{ state_attr(cube_entity, "your_mqtt_topic_attribute") }}'
     payload: shake
     id: shake
   - platform: mqtt
-    topic: !input cube_action
+    topic: '{{ state_attr(cube_entity, "your_mqtt_topic_attribute") }}'
     payload: throw
     id: throw
   - platform: mqtt
-    topic: !input cube_action
+    topic: '{{ state_attr(cube_entity, "your_mqtt_topic_attribute") }}'
     payload: wakeup
     id: wakeup
   - platform: mqtt
-    topic: !input cube_action
+    topic: '{{ state_attr(cube_entity, "your_mqtt_topic_attribute") }}'
     payload: fall
     id: fall
   - platform: mqtt
-    topic: !input cube_action
+    topic: '{{ state_attr(cube_entity, "your_mqtt_topic_attribute") }}'
     payload: tap
     id: tap
   - platform: mqtt
-    topic: !input cube_action
+    topic: '{{ state_attr(cube_entity, "your_mqtt_topic_attribute") }}'
     payload: slide
     id: slide
   - platform: mqtt
-    topic: !input cube_action
+    topic: '{{ state_attr(cube_entity, "your_mqtt_topic_attribute") }}'
     payload: flip180
     id: flip180
   - platform: mqtt
-    topic: !input cube_action
-    payload: flip90
-    id: flip90
-  - platform: mqtt
-    topic: !input cube_action
-    payload: rotate_left
-    id: rotate_left
-  - platform: mqtt
-    topic: !input cube_action
-    payload: rotate_right
-    id: rotate_right
-
-action:
-  - choose:
-      - conditions:
-          - condition: trigger
-            id: shake
-        sequence:
-          !input action_shake
-      - conditions:
-          - condition: trigger
-            id: throw
-        sequence:
-          !input action_throw
-      - conditions:
-          - condition: trigger
-            id: wakeup
-        sequence:
-          !input action_wakeup
-      - conditions:
-          - condition: trigger
-            id: fall
-        sequence:
-          !input action_fall
-      - conditions:
-          - condition: trigger
-            id: tap
-        sequence:
-          !input action_tap
-      - conditions:
-          - condition: trigger
-            id: slide
-        sequence:
-          !input action_slide
-      - conditions:
-          - condition: trigger
-            id: flip180
-        sequence:
-          !input action_flip180
-      - conditions:
-          - condition: trigger
-            id: flip90
-        sequence:
-          !input action_flip90
-      - conditions:
-          - condition: trigger
-            id: rotate_left
-        sequence:
-          !input action_rotate_left
-      - conditions:
-          - condition: trigger
-            id: rotate_right
-        sequence:
-          !input action_rotate_right
-    default: []
-mode: single
+    topic: '{{ state_
