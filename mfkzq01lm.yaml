@@ -5,83 +5,124 @@ blueprint:
   input:
     cube_action:
       name: Magic Cube MQTT topic
-      description: 'type in your Magic Cube MQTT topic (i.e. zigbee2mqtt/Magic Cube/action)'
+      description: 'Geben Sie das MQTT-Topic für den Magic Cube ein (z.B. zigbee2mqtt/Magic Cube/action)'
       selector:
         text:
-    action_flip:
-      name: flip
-      description: select action to run when you flip the cube
+    action_shake:
+      name: Shake
+      description: Aktion, die bei einer Schüttelbewegung des Cubes ausgeführt wird.
       selector:
         action:
-    action_rotate_left:
-      name: rotate_left
-      description: select action to run when you rotate the cube counter-clockwise
+    action_throw:
+      name: Throw
+      description: Aktion, die bei einem Wurf des Cubes ausgeführt wird.
       selector:
         action:
-    action_rotate_right:
-      name: rotate_right
-      description: select action to run when you rotate clockwise
+    action_wakeup:
+      name: Wakeup
+      description: Aktion, die bei einem Aufwecken des Cubes ausgeführt wird.
+      selector:
+        action:
+    action_fall:
+      name: Fall
+      description: Aktion, die bei einem Fall des Cubes ausgeführt wird.
       selector:
         action:
     action_tap:
-      name: tap
-      description: select action to run when you double-tap the cube
+      name: Tap
+      description: Aktion, die bei einem Tippen auf den Cube ausgeführt wird.
       selector:
         action:
     action_slide:
-      name: slide
-      description: select action to run when you slide the cube
+      name: Slide
+      description: Aktion, die bei einer Verschiebebewegung des Cubes ausgeführt wird.
       selector:
         action:
-    action_shake:
-      name: shake
-      description: select action to run when you shake the cube
+    action_flip180:
+      name: Flip180
+      description: Aktion, die bei einer Umklappbewegung des Cubes um 180 Grad ausgeführt wird.
+      selector:
+        action:
+    action_flip90:
+      name: Flip90
+      description: Aktion, die bei einer Umklappbewegung des Cubes um 90 Grad ausgeführt wird.
+      selector:
+        action:
+    action_rotate_left:
+      name: RotateLeft
+      description: Aktion, die bei einer gegen den Uhrzeigersinn Drehung des Cubes ausgeführt wird.
+      selector:
+        action:
+    action_rotate_right:
+      name: RotateRight
+      description: Aktion, die bei einer im Uhrzeigersinn Drehung des Cubes ausgeführt wird.
       selector:
         action:
 
 trigger:
   - platform: mqtt
     topic: !input cube_action
-    payload: flip90
-    id: flip
-  - platform: mqtt
-    topic: !input cube_action
-    id: rotate_left
-    payload: rotate_left
-  - platform: mqtt
-    topic: !input cube_action
-    id: rotate_right
-    payload: rotate_right
-  - platform: mqtt
-    topic: !input cube_action
-    id: tap
-    payload: tap
-  - platform: mqtt
-    topic: !input cube_action
-    id: slide
-    payload: slide
-  - platform: mqtt
-    topic: !input cube_action
     payload: shake
     id: shake
+  - platform: mqtt
+    topic: !input cube_action
+    payload: throw
+    id: throw
+  - platform: mqtt
+    topic: !input cube_action
+    payload: wakeup
+    id: wakeup
+  - platform: mqtt
+    topic: !input cube_action
+    payload: fall
+    id: fall
+  - platform: mqtt
+    topic: !input cube_action
+    payload: tap
+    id: tap
+  - platform: mqtt
+    topic: !input cube_action
+    payload: slide
+    id: slide
+  - platform: mqtt
+    topic: !input cube_action
+    payload: flip180
+    id: flip180
+  - platform: mqtt
+    topic: !input cube_action
+    payload: flip90
+    id: flip90
+  - platform: mqtt
+    topic: !input cube_action
+    payload: rotate_left
+    id: rotate_left
+  - platform: mqtt
+    topic: !input cube_action
+    payload: rotate_right
+    id: rotate_right
 
 action:
   - choose:
       - conditions:
           - condition: trigger
-            id: flip
+            id: shake
         sequence:
-          !input action_flip
+          !input action_shake
       - conditions:
           - condition: trigger
-            id: rotate_left
+            id: throw
         sequence:
-          !input action_rotate_left
+          !input action_throw
       - conditions:
           - condition: trigger
-            id: rotate_right
+            id: wakeup
         sequence:
-          !input action_rotate_right
+          !input action_wakeup
+      - conditions:
+          - condition: trigger
+            id: fall
+        sequence:
+          !input action_fall
       - conditions:
           - condition: trigger
             id: tap
@@ -94,8 +135,23 @@ action:
           !input action_slide
       - conditions:
           - condition: trigger
-            id: shake
+            id: flip180
         sequence:
-          !input action_shake
+          !input action_flip180
+      - conditions:
+          - condition: trigger
+            id: flip90
+        sequence:
+          !input action_flip90
+      - conditions:
+          - condition: trigger
+            id: rotate_left
+        sequence:
+          !input action_rotate_left
+      - conditions:
+          - condition: trigger
+            id: rotate_right
+        sequence:
+          !input action_rotate_right
     default: []
 mode: single
