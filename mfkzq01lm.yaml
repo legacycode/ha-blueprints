@@ -5,57 +5,57 @@ blueprint:
   input:
     cube_action:
       name: Magic Cube MQTT topic
-      description: 'Geben Sie das MQTT-Topic für den Magic Cube ein (z.B. zigbee2mqtt/Magic Cube/action)'
+      description: 'Enter the MQTT topic for the Magic Cube (e.g., zigbee2mqtt/Magic Cube/action)'
       selector:
         text:
     action_shake:
       name: Shake
-      description: Aktion, die bei einer Schüttelbewegung des Cubes ausgeführt wird.
+      description: Action to be executed when the cube is shaken.
       selector:
         action:
     action_throw:
       name: Throw
-      description: Aktion, die bei einem Wurf des Cubes ausgeführt wird.
+      description: Action to be executed when the cube is thrown.
       selector:
         action:
     action_wakeup:
       name: Wakeup
-      description: Aktion, die bei einem Aufwecken des Cubes ausgeführt wird.
+      description: Action to be executed when the cube is woken up.
       selector:
         action:
     action_fall:
       name: Fall
-      description: Aktion, die bei einem Fall des Cubes ausgeführt wird.
+      description: Action to be executed when the cube falls.
       selector:
         action:
     action_tap:
       name: Tap
-      description: Aktion, die bei einem Tippen auf den Cube ausgeführt wird.
+      description: Action to be executed when tapping on the cube.
       selector:
         action:
     action_slide:
       name: Slide
-      description: Aktion, die bei einer Verschiebebewegung des Cubes ausgeführt wird.
+      description: Action to be executed when sliding the cube.
       selector:
         action:
     action_flip180:
       name: Flip180
-      description: Aktion, die bei einer Umklappbewegung des Cubes um 180 Grad ausgeführt wird.
+      description: Action to be executed when the cube is flipped 180 degrees.
       selector:
         action:
     action_flip90:
       name: Flip90
-      description: Aktion, die bei einer Umklappbewegung des Cubes um 90 Grad ausgeführt wird.
+      description: Action to be executed when the cube is flipped 90 degrees.
       selector:
         action:
     action_rotate_left:
       name: RotateLeft
-      description: Aktion, die bei einer gegen den Uhrzeigersinn Drehung des Cubes ausgeführt wird.
+      description: Action to be executed when the cube is rotated counterclockwise.
       selector:
         action:
     action_rotate_right:
       name: RotateRight
-      description: Aktion, die bei einer im Uhrzeigersinn Drehung des Cubes ausgeführt wird.
+      description: Action to be executed when the cube is rotated clockwise.
       selector:
         action:
 
