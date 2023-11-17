@@ -1,5 +1,5 @@
 blueprint:
-  name: Zigbee2Mqtt Aqara Magic Cube Control
+  name: Zigbee2Mqtt Aqara Magic Cube Control (MFKZQ01LM)
   description: 'Control Home Assistant automations using Zigbee2mqtt and the Aqara Magic Cube. The possible actions include shake, throw, wakeup, fall, tap, slide, flip180, flip90, rotate_left, and rotate_right.'
   domain: automation
   input:
