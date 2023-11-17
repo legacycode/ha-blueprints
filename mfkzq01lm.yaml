@@ -19,42 +19,42 @@ blueprint:
       selector:
         action:
     action_wakeup:
-      name: Wakeup
+      name: wakeup
       description: 'Aktion, die ausgeführt wird, wenn der Würfel aufgeweckt wird.'
       selector:
         action:
     action_fall:
-      name: Fall
+      name: fall
       description: 'Aktion, die ausgeführt wird, wenn der Würfel fällt.'
       selector:
         action:
     action_tap:
-      name: Tap
+      name: tap
       description: 'Aktion, die ausgeführt wird, wenn auf den Würfel getippt wird.'
       selector:
         action:
     action_slide:
-      name: Slide
+      name: slide
       description: 'Aktion, die ausgeführt wird, wenn der Würfel geschoben wird.'
       selector:
         action:
     action_flip180:
-      name: Flip180
+      name: flip180
       description: 'Aktion, die ausgeführt wird, wenn der Würfel um 180 Grad gedreht wird.'
       selector:
         action:
     action_flip90:
-      name: Flip90
+      name: flip90
       description: 'Aktion, die ausgeführt wird, wenn der Würfel um 90 Grad gedreht wird.'
       selector:
         action:
     action_rotate_left:
-      name: RotateLeft
+      name: rotateLeft
       description: 'Aktion, die ausgeführt wird, wenn der Würfel gegen den Uhrzeigersinn gedreht wird.'
       selector:
         action:
     action_rotate_right:
-      name: RotateRight
+      name: rotateRight
       description: 'Aktion, die ausgeführt wird, wenn der Würfel im Uhrzeigersinn gedreht wird.'
       selector:
         action:
