@@ -9,12 +9,12 @@ blueprint:
       selector:
         text:
     action_shake:
-      name: Shake
+      name: shake
       description: 'Aktion, die ausgeführt wird, wenn der Würfel geschüttelt wird.'
       selector:
         action:
     action_throw:
-      name: Throw
+      name: throw
       description: 'Aktion, die ausgeführt wird, wenn der Würfel geworfen wird.'
       selector:
         action:
